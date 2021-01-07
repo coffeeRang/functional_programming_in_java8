@@ -22,7 +22,7 @@ public class Compare {
 //					.sorted((person1, person2) -> person1.ageDifference(person2))
 //					.collect(Collectors.toList());
 
-		// À§ sorted() ¿¡ ´ëÇÑ È£Ãâ ºÎºĞÀ» Çâ»ó½ÃÅ³ ¼ö ÀÖ°Ô ¼öÁ¤
+		// ìœ„ sorted() ì— ëŒ€í•œ í˜¸ì¶œ ë¶€ë¶„ì„ í–¥ìƒì‹œí‚¬ ìˆ˜ ìˆê²Œ ìˆ˜ì •
 //		List<Person> ascendingAge = 
 //				people.stream()
 //				.sorted(Person::ageDifference)
@@ -30,7 +30,7 @@ public class Compare {
 //		
 //		printPeople("Sorted in ascending order by age: ", ascendingAge);
 		
-		// ³»¸²Â÷¼øÀ¸·Î Á¤·Ä
+		// ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 //		printPeople("Sorted in descending order by age: ", 
 //				people.stream()
 //					.sorted((person1, person2) -> person2.ageDifference(person1))
@@ -54,21 +54,21 @@ public class Compare {
 //					.collect(Collectors.toList())
 //				);
 //		
-//		// ÀÌ¸§À» ¾ËÆÄºªÀÇ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä
+//		// ì´ë¦„ì„ ì•ŒíŒŒë²³ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬
 //		printPeople("Sorted in ascending order by name: ",
 //				people.stream()
 //					.sorted((person1, person2) -> person1.getname().compareTo(person2.getname()))
 //					.collect(Collectors.toList())
 //				);
 //		
-//		// ¸®½ºÆ®¿¡¼­ °¡Àå ÀşÀº »ç¶÷À» ¼±ÅÃ
-//		// ifPresnet() ¸Ş¼­µå¸¦ »ç¿ëÇØ¼­ Optional·ÎºÎÅÍ ¾×¼¼½º ÇÒ ¼ö ÀÖ´Â °¡Àå ¾î¸° »ç¶÷¿¡ ´ëÇÑ Á¤º¸¸¦ Ãâ·Â
+//		// ë¦¬ìŠ¤íŠ¸ì—ì„œ ê°€ì¥ ì Šì€ ì‚¬ëŒì„ ì„ íƒ
+//		// ifPresnet() ë©”ì„œë“œë¥¼ ì‚¬ìš©í•´ì„œ Optionalë¡œë¶€í„° ì•¡ì„¸ìŠ¤ í•  ìˆ˜ ìˆëŠ” ê°€ì¥ ì–´ë¦° ì‚¬ëŒì— ëŒ€í•œ ì •ë³´ë¥¼ ì¶œë ¥
 //		people.stream()
 //			.min(Person::ageDifference)
 //			.ifPresent(youngest -> System.out.println("Youngest: " + youngest));
 //		
-//		// ¸®½ºÆ®¿¡¼­ °¡Àå ³ªÀÌ°¡ ¸¹Àº »ç¶÷À» ¼±ÅÃ
-//		// max() ¸Ş¼­µå¸¦ »ç¿ë
+//		// ë¦¬ìŠ¤íŠ¸ì—ì„œ ê°€ì¥ ë‚˜ì´ê°€ ë§ì€ ì‚¬ëŒì„ ì„ íƒ
+//		// max() ë©”ì„œë“œë¥¼ ì‚¬ìš©
 //		people.stream()
 //			.max(Person::ageDifference)
 //			.ifPresent(eldest -> System.out.println("Eldest: " + eldest));
@@ -77,9 +77,9 @@ public class Compare {
 			.sorted((person1, person2) -> 
 				person1.getName().compareTo(person2.getName()));
 		
-		// comparing() ¸Ş¼­µå´Â Comparator¸¦ »ı¼ºÇÏ±â À§ÇØ Á¦°øµÈ ¶÷´Ù Ç¥Çö½ÄÀÇ ·ÎÁ÷À» »ç¿ë == °íÂ÷ÇÔ¼ö
-		// °íÂ÷ ÇÔ¼ö¶õ? 
-		// ÇÏ³ª ÀÌ»óÀÇ ÇÔ¼ö¸¦ ÀÎ¼ö·Î ÃëÇÑ´Ù or ÇÔ¼ö¸¦ °á°ú·Î ¹İÈ¯ÇÑ´Ù.
+		// comparing() ë©”ì„œë“œëŠ” Comparatorë¥¼ ìƒì„±í•˜ê¸° ìœ„í•´ ì œê³µëœ ëŒë‹¤ í‘œí˜„ì‹ì˜ ë¡œì§ì„ ì‚¬ìš© == ê³ ì°¨í•¨ìˆ˜
+		// ê³ ì°¨ í•¨ìˆ˜ë€? 
+		// í•˜ë‚˜ ì´ìƒì˜ í•¨ìˆ˜ë¥¼ ì¸ìˆ˜ë¡œ ì·¨í•œë‹¤ or í•¨ìˆ˜ë¥¼ ê²°ê³¼ë¡œ ë°˜í™˜í•œë‹¤.
 		final Function<Person, String> byName = person -> person.getName();
 		people.stream()
 			.sorted(Comparator.comparing(byName));

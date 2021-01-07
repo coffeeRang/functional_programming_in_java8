@@ -16,15 +16,15 @@ public class OlderThan20 {
 		List<Person> olderThan20v1 = new ArrayList();
 		
 		/** 
-		 * ¸î°¡Áö ¹®Á¦°¡ Á¸ÀçÇÑ´Ù.
-		 * 1. Å¸±ê ÄÃ·º¼Ç¿¡ ¿¤¸®¸ÕÆ®¸¦ Ãß°¡ÇÏ´Â ¿ÀÆÛ·¹ÀÌ¼ÇÀÌ ³Ê¹« ·Î¿ì ·¹º§
-		 * 		ÀÌ ¿ÀÆÛ·¹ÀÌ¼ÇÀÌ ¼­¼úÀû(declarative)ÀÌÁö ¾Ê°í, ¸í·ÉÀû(imperative)¶ó´Â ÀÇ¹Ì´Ù.
-		 * 		ÀÌÅÍ·¹ÀÌ¼ÇÀ» µ¿½Ã¿¡ ½ÇÇàÇÏ·Á¸é, ½º·¹µå ¼¼ÀÌÇÁÆ¼ ¹®Á¦ °í·Á ÇÊ¿ä
-		 * 		(°¡º¯¼ºÀº º´·ÄÈ­¸¦ ¾î·Æ°Ô ¸¸µç´Ù)
-		 * 	-> collect() ¸Þ¼­µå¸¦ »ç¿ëÇÏ¸é ÀÌ ¹®Á¦¸¦ ½±°Ô ÇØ°áÇÒ ¼ö ÀÖ´Ù.
+		 * ëª‡ê°€ì§€ ë¬¸ì œê°€ ì¡´ìž¬í•œë‹¤.
+		 * 1. íƒ€ê¹ƒ ì»¬ë ‰ì…˜ì— ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì¶”ê°€í•˜ëŠ” ì˜¤í¼ë ˆì´ì…˜ì´ ë„ˆë¬´ ë¡œìš° ë ˆë²¨
+		 * 		ì´ ì˜¤í¼ë ˆì´ì…˜ì´ ì„œìˆ ì (declarative)ì´ì§€ ì•Šê³ , ëª…ë ¹ì (imperative)ë¼ëŠ” ì˜ë¯¸ë‹¤.
+		 * 		ì´í„°ë ˆì´ì…˜ì„ ë™ì‹œì— ì‹¤í–‰í•˜ë ¤ë©´, ìŠ¤ë ˆë“œ ì„¸ì´í”„í‹° ë¬¸ì œ ê³ ë ¤ í•„ìš”
+		 * 		(ê°€ë³€ì„±ì€ ë³‘ë ¬í™”ë¥¼ ì–´ë µê²Œ ë§Œë“ ë‹¤)
+		 * 	-> collect() ë©”ì„œë“œë¥¼ ì‚¬ìš©í•˜ë©´ ì´ ë¬¸ì œë¥¼ ì‰½ê²Œ í•´ê²°í•  ìˆ˜ ìžˆë‹¤.
 		 * 
-		 * 2. ¼øÂ÷ ¿ÀÆÛ·¹ÀÌ¼Ç¿¡¼­´Â ÇÊ¿äÇÏÁö ¾ÊÀ» ¼öµµ ÀÖ´Ù. 
-		 * 		ÄÚµå´Â ¼øÂ÷½ÇÇà°ú º´·Ä ½ÇÇà ¸ðµÎ¿¡¼­ µ¿ÀÛÇÏµµ·Ï ¼³°èµÆ´Ù.
+		 * 2. ìˆœì°¨ ì˜¤í¼ë ˆì´ì…˜ì—ì„œëŠ” í•„ìš”í•˜ì§€ ì•Šì„ ìˆ˜ë„ ìžˆë‹¤. 
+		 * 		ì½”ë“œëŠ” ìˆœì°¨ì‹¤í–‰ê³¼ ë³‘ë ¬ ì‹¤í–‰ ëª¨ë‘ì—ì„œ ë™ìž‘í•˜ë„ë¡ ì„¤ê³„ëë‹¤.
 		 */
 		people.stream()
 			.filter(person -> person.getAge() > 20)
@@ -32,10 +32,10 @@ public class OlderThan20 {
 		System.out.println("People older than 20: " + olderThan20v1);
 		
 		/**
-		 * collect() ¸Þ¼­µå´Â ¿¤¸®¸ÕÆ®µé¿¡ ´ëÇÑ ½ºÆ®¸²À» °¡Áø´Ù. - °á°ú ÄÁÅ×ÀÌ³Ê·Î ÇØ´ç ½ºÆ®¸²À» ¸ðÀº´Ù.
-		 * - °á°ú ÄÁÅ×ÀÌ³Ê¸¦ ¸¸µå´Â ¹æ¹ý(ex: ArrayList::new ¸Þ¼­µå¸¦ »ç¿ë)
-		 * - ÇÏ³ªÀÇ ¿¤¸®¸ÕÆ®¸¦ °á°ú ÄÁÅ×ÀÌ³Ê¿¡ Ãß°¡ÇÏ´Â ¹æ¹ý(ex: ArrayList::add ¸Þ¼­µå¸¦ »ç¿ë)
-		 * - ÇÏ³ªÀÇ °á°ú ÄÁÅ×ÀÌ³Ê¸¦ ´Ù¸¥ °Í°ú ÇÕÄ¡´Â ¹æ¹ý(ex: ArrayList::addAll ¸Þ¼­µå¸¦ »ç¿ë)
+		 * collect() ë©”ì„œë“œëŠ” ì—˜ë¦¬ë¨¼íŠ¸ë“¤ì— ëŒ€í•œ ìŠ¤íŠ¸ë¦¼ì„ ê°€ì§„ë‹¤. - ê²°ê³¼ ì»¨í…Œì´ë„ˆë¡œ í•´ë‹¹ ìŠ¤íŠ¸ë¦¼ì„ ëª¨ì€ë‹¤.
+		 * - ê²°ê³¼ ì»¨í…Œì´ë„ˆë¥¼ ë§Œë“œëŠ” ë°©ë²•(ex: ArrayList::new ë©”ì„œë“œë¥¼ ì‚¬ìš©)
+		 * - í•˜ë‚˜ì˜ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ê²°ê³¼ ì»¨í…Œì´ë„ˆì— ì¶”ê°€í•˜ëŠ” ë°©ë²•(ex: ArrayList::add ë©”ì„œë“œë¥¼ ì‚¬ìš©)
+		 * - í•˜ë‚˜ì˜ ê²°ê³¼ ì»¨í…Œì´ë„ˆë¥¼ ë‹¤ë¥¸ ê²ƒê³¼ í•©ì¹˜ëŠ” ë°©ë²•(ex: ArrayList::addAll ë©”ì„œë“œë¥¼ ì‚¬ìš©)
 		 */
 		List<Person> olderThan20v2 = people.stream()
 				.filter(person -> person.getAge() > 20)
@@ -43,28 +43,28 @@ public class OlderThan20 {
 		System.out.println("People older than 20v2: " + olderThan20v2);
 		
 		/**
-		 * olderThan20v2 °á°ú´Â ÀÌÀü ¹öÀü°ú °°À¸³ª, ÀÌ ¹öÀüÀº ´õ ¸¹Àº ÀåÁ¡À» °®°í ÀÖ´Ù. 
-		 * 1. °³¹ßÀÚÀÇ ÀÇµµ´ë·Î ´õ ¼­¼úÀûÀ¸·Î ÇÁ·Î±×·¡¹ÖÀÌ °¡´É
-		 * 		°á°ú¸¦ ¸ð¾Æ¼­(collect), ArrayList¿¡ ³Ö´Â´Ù´Â ¸ñÀûÀ» ¸íÈ®È÷ ¸í½Ã
-		 * 		collect() ¸Þ¼­µå´Â Ã¹ ¹øÂ° ÆÄ¶ó¹ÌÅÍ·Î ÆÑÅä¸®(factory)³ª ¼­ÇÃ¶óÀÌ¾î(supplier)¸¦ °®´Â´Ù.
-		 * 		±× ´ÙÀ½ ÆÄ¶ó¹ÌÅÍµéÀº ¿¤¸®¸ÕÆ®¸¦ ÄÃ·º¼ÇÀ¸·Î ¸ðÀ¸´Â ¿ÀÆÛ·¹ÀÌ¼ÇµéÀÌ´Ù.
+		 * olderThan20v2 ê²°ê³¼ëŠ” ì´ì „ ë²„ì „ê³¼ ê°™ìœ¼ë‚˜, ì´ ë²„ì „ì€ ë” ë§Žì€ ìž¥ì ì„ ê°–ê³  ìžˆë‹¤. 
+		 * 1. ê°œë°œìžì˜ ì˜ë„ëŒ€ë¡œ ë” ì„œìˆ ì ìœ¼ë¡œ í”„ë¡œê·¸ëž˜ë°ì´ ê°€ëŠ¥
+		 * 		ê²°ê³¼ë¥¼ ëª¨ì•„ì„œ(collect), ArrayListì— ë„£ëŠ”ë‹¤ëŠ” ëª©ì ì„ ëª…í™•ížˆ ëª…ì‹œ
+		 * 		collect() ë©”ì„œë“œëŠ” ì²« ë²ˆì§¸ íŒŒë¼ë¯¸í„°ë¡œ íŒ©í† ë¦¬(factory)ë‚˜ ì„œí”Œë¼ì´ì–´(supplier)ë¥¼ ê°–ëŠ”ë‹¤.
+		 * 		ê·¸ ë‹¤ìŒ íŒŒë¼ë¯¸í„°ë“¤ì€ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì»¬ë ‰ì…˜ìœ¼ë¡œ ëª¨ìœ¼ëŠ” ì˜¤í¼ë ˆì´ì…˜ë“¤ì´ë‹¤.
 		 * 
-		 * 2.  ÀÌÅÍ·¹ÀÌ¼Ç ½ÇÇàÀ» º´·ÄÈ­ÇÏ±â ½±´Ù - ÄÚµå¿¡¼­ ¸í½ÃÀû º¯°æÀÌ ÀÏ¾î³ªÁö ¾Ê´Â´Ù.
-		 * 		º¯°æ¿¡ ´ëÇÑ ºÎºÐÀº ¶óÀÌºê·¯¸®¿¡¼­ Á¦¾î
-		 * 			- ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÑ Á¶À²ÀÌ °£´ÜÇÏ°í ½º·¹µå ¼¼ÀÌÇÁÆ¼¸¦ º¸Àå
-		 * 			- ArrayList ÀÚÃ¼´Â ½º·¹Æ® ¼¼ÀÌÇÁÆ¼°¡ ¾Æ´Ï´õ¶óµµ °¡´ÉÇÏ´Ù.
+		 * 2.  ì´í„°ë ˆì´ì…˜ ì‹¤í–‰ì„ ë³‘ë ¬í™”í•˜ê¸° ì‰½ë‹¤ - ì½”ë“œì—ì„œ ëª…ì‹œì  ë³€ê²½ì´ ì¼ì–´ë‚˜ì§€ ì•ŠëŠ”ë‹¤.
+		 * 		ë³€ê²½ì— ëŒ€í•œ ë¶€ë¶„ì€ ë¼ì´ë¸ŒëŸ¬ë¦¬ì—ì„œ ì œì–´
+		 * 			- ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì‚¬ìš©í•œ ì¡°ìœ¨ì´ ê°„ë‹¨í•˜ê³  ìŠ¤ë ˆë“œ ì„¸ì´í”„í‹°ë¥¼ ë³´ìž¥
+		 * 			- ArrayList ìžì²´ëŠ” ìŠ¤ë ˆíŠ¸ ì„¸ì´í”„í‹°ê°€ ì•„ë‹ˆë”ë¼ë„ ê°€ëŠ¥í•˜ë‹¤.
 		 * 
-		 * 3. collect() ¸Þ¼­µå´Â ´Ù¸¥ ¼­ºê ¸®½ºÆ® °£ÀÇ º´·Ä µ¡¼ÀÀ» ¼öÇàÇØ ±× °á°ú(º´·Ä µ¡¼À)¸¦ ½º·¹µå ¼¼ÀÌÇÁÇÏ°Ô Á» ´õ Å« ±Ô¸ðÀÇ ¸®½ºÆ®·Î ÇÕÄ¥ ¼ö ÀÖ´Ù. 
-		 * 		¸¶Áö¸· ÆÄ¶ó¹ÌÅÍ´Â ¸®½ºÆ®¸¦ ÇÕÄ¡´Âµ¥ µµ¿òÀ» ÁØ´Ù.
+		 * 3. collect() ë©”ì„œë“œëŠ” ë‹¤ë¥¸ ì„œë¸Œ ë¦¬ìŠ¤íŠ¸ ê°„ì˜ ë³‘ë ¬ ë§ì…ˆì„ ìˆ˜í–‰í•´ ê·¸ ê²°ê³¼(ë³‘ë ¬ ë§ì…ˆ)ë¥¼ ìŠ¤ë ˆë“œ ì„¸ì´í”„í•˜ê²Œ ì¢€ ë” í° ê·œëª¨ì˜ ë¦¬ìŠ¤íŠ¸ë¡œ í•©ì¹  ìˆ˜ ìžˆë‹¤. 
+		 * 		ë§ˆì§€ë§‰ íŒŒë¼ë¯¸í„°ëŠ” ë¦¬ìŠ¤íŠ¸ë¥¼ í•©ì¹˜ëŠ”ë° ë„ì›€ì„ ì¤€ë‹¤.
 		 */
 
 		/**
-		 * Áö±Ý±îÁö ArrayList¿¡ ¿¤¸®¸ÕÆ®¸¦ Ãß°¡ÇÏ¸é¼­ collect() ¸Þ¼­µåÀÇ ÀåÁ¡¿¡ ´ëÇØ ¾Ë¾ÆºÃ´Ù.
-		 * ÀÌ ¸Þ¼­µå¸¦ Á»´õ °£´ÜÇÏ°í Æí¸®ÇÏ°Ô ¸¸µé±â À§ÇØ ´Ù¸¥ ¹öÀü¿¡ ´ëÇØ ¾Ë¾Æº¸±â À§ÇØ Collector¸¦ ÆÄ¶ó¹ÌÅÍ·Î »ç¿ëÇÑ´Ù.
+		 * ì§€ê¸ˆê¹Œì§€ ArrayListì— ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì¶”ê°€í•˜ë©´ì„œ collect() ë©”ì„œë“œì˜ ìž¥ì ì— ëŒ€í•´ ì•Œì•„ë´¤ë‹¤.
+		 * ì´ ë©”ì„œë“œë¥¼ ì¢€ë” ê°„ë‹¨í•˜ê³  íŽ¸ë¦¬í•˜ê²Œ ë§Œë“¤ê¸° ìœ„í•´ ë‹¤ë¥¸ ë²„ì „ì— ëŒ€í•´ ì•Œì•„ë³´ê¸° ìœ„í•´ Collectorë¥¼ íŒŒë¼ë¯¸í„°ë¡œ ì‚¬ìš©í•œë‹¤.
 		 * 
-		 * Collector´Â supplier, accumulator, combinerÀÇ ¿ÀÆÛ·¹ÀÌ¼Ç¿¡ ´ëÇÑ ÀÎÅÍÆäÀÌ½º ¿ªÇÒÀ» ÇÑ´Ù.
-		 * Collectors À¯Æ¿¸®Æ¼ Å¬·¡½º´Â toList() ÄÁºñ´Ï¾ð½º(convenience: ÆíÀÇ,Æí¸®) ¸Þ¼­µå¸¦ Á¦°øÇÑ´Ù.
-		 * 		ÀÌ ¸Þ¼­µå´Â Collect ÀÎÅÍÆäÀÌ½ºÀÇ ±¸ÇöÀ» »ý¼ºÇØ¼­ ¿¤¸®¸ÕÆ®µéÀ» ArrayList¿¡ ¸ðÀ¸´Â ¿ªÇÒÀ» ÇÑ´Ù.
+		 * CollectorëŠ” supplier, accumulator, combinerì˜ ì˜¤í¼ë ˆì´ì…˜ì— ëŒ€í•œ ì¸í„°íŽ˜ì´ìŠ¤ ì—­í• ì„ í•œë‹¤.
+		 * Collectors ìœ í‹¸ë¦¬í‹° í´ëž˜ìŠ¤ëŠ” toList() ì»¨ë¹„ë‹ˆì–¸ìŠ¤(convenience: íŽ¸ì˜,íŽ¸ë¦¬) ë©”ì„œë“œë¥¼ ì œê³µí•œë‹¤.
+		 * 		ì´ ë©”ì„œë“œëŠ” Collect ì¸í„°íŽ˜ì´ìŠ¤ì˜ êµ¬í˜„ì„ ìƒì„±í•´ì„œ ì—˜ë¦¬ë¨¼íŠ¸ë“¤ì„ ArrayListì— ëª¨ìœ¼ëŠ” ì—­í• ì„ í•œë‹¤.
 		 */
 		List<Person> olderThan20v3 = people.stream()
 			.filter(person -> person.getAge() > 20)
@@ -72,7 +72,7 @@ public class OlderThan20 {
 		System.out.println("People older than 20v3: " + olderThan20v3);
 		
 		/**
-		 * Collectors¿¡´Â ´Ù¾çÇÑ collect³ª ¾îÅ¥¹Â·¹ÀÌÅÍ(accumulator) ¿ÀÆÛ·¹ÀÌ¼ÇÀ» ¼öÇàÇÑ´À ¸î °¡Áö ´Ù¸¥ ¸Þ¼­µå°¡ Á¸Àç
+		 * Collectorsì—ëŠ” ë‹¤ì–‘í•œ collectë‚˜ ì–´íë®¤ë ˆì´í„°(accumulator) ì˜¤í¼ë ˆì´ì…˜ì„ ìˆ˜í–‰í•œëŠ ëª‡ ê°€ì§€ ë‹¤ë¥¸ ë©”ì„œë“œê°€ ì¡´ìž¬
 		 * 
 		 */
 		
